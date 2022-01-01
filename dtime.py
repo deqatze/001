@@ -40,5 +40,4 @@ def submit():
     utc=int(a.get())
 sub_btn=Button(root,text = 'change time zone', command = submit,bg='black',fg='white')
 sub_btn.pack(anchor='w')
-root.iconbitmap(r'Z:\\bg\\i.ico')
 root.mainloop(  )
