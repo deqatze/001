@@ -11,7 +11,7 @@ clock.pack()
 def ms() :
     return ((time.time_ns() // 1000000)+(utc*60*60*1000))%(24*60*60*1000)
 def dec():
-    return str(ms()*100//86400)
+    return str(int(ms()*100//86400)).zfill(5)
 def dtime():
     return dec()[0:1]+':'+dec()[1:3]+':'+dec()[3:5]
 def tick():
@@ -37,7 +37,8 @@ zone.pack(anchor='w')
 root.title('decimal time')
 def submit():
     global utc
-    utc=int(a.get())
+    utc=float(a.get())
 sub_btn=Button(root,text = 'change time zone', command = submit,bg='black',fg='white')
 sub_btn.pack(anchor='w')
+root.iconbitmap(r'Z:\\bg\\i.ico')
 root.mainloop(  )
